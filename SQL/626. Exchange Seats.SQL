@@ -1,5 +1,6 @@
 626. Exchange Seats
 Medium
+
 /*
 Create table If Not Exists Seat (id int, student varchar(255))
 Truncate table Seat
