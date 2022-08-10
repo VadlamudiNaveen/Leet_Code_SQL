@@ -96,18 +96,18 @@ Output:
 --SOLUTION 
 WITH POINTS AS 
 (
-      SELECT HOST_TEAM AS TEAM_ID,
-           SUM(HOST_POINTS) AS TPOINTS
-      FROM (
-                SELECT HOST_TEAM,
-                CASE 
-                    WHEN HOST_GOALS > GUEST_GOALS THEN 3
-                    WHEN HOST_GOALS = GUEST_GOALS THEN 1
-                    ELSE 0
-                END AS HOST_POINTS
-                FROM MATCHES 
-        ) AS A
-        GROUP BY HOST_TEAM
+               SELECT HOST_TEAM AS TEAM_ID,
+                    SUM(HOST_POINTS) AS TPOINTS
+               FROM (
+                         SELECT HOST_TEAM,
+                         CASE 
+                              WHEN HOST_GOALS > GUEST_GOALS THEN 3
+                              WHEN HOST_GOALS = GUEST_GOALS THEN 1
+                              ELSE 0
+                         END AS HOST_POINTS
+                         FROM MATCHES 
+               ) AS A
+               GROUP BY HOST_TEAM
         UNION ALL
                SELECT 
                     GUEST_TEAM AS TEAM_ID,
@@ -130,9 +130,13 @@ WITH POINTS AS
      GROUP BY TEAM_ID
 )
 
-SELECT T.TEAM_ID, T.TEAM_NAME, CASE WHEN S.TPOINTS IS NULL THEN 0
-                                    ELSE S.TPOINTS 
-                                END AS NUM_POINTS 
+SELECT 
+T.TEAM_ID, 
+T.TEAM_NAME, 
+CASE 
+          WHEN S.TPOINTS IS NULL THEN 0
+          ELSE S.TPOINTS 
+END AS NUM_POINTS 
 FROM TEAMS AS T LEFT JOIN SUMMARY AS S
 ON T.TEAM_ID = S.TEAM_ID
 ORDER BY NUM_POINTS DESC, TEAM_ID ASC 
