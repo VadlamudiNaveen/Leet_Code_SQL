@@ -1,3 +1,4 @@
+Easy
 
 /*
 Create table If Not Exists Elements (symbol varchar(2), type ENUM('Metal','Nonmetal','Noble'), electrons int);
