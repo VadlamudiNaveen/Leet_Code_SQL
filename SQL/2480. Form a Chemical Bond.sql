@@ -1,6 +1,8 @@
+2480. Form a Chemical Bond
+
 Easy
 
-/*
+-- Schema 
 Create table If Not Exists Elements (symbol varchar(2), type ENUM('Metal','Nonmetal','Noble'), electrons int);
 Truncate table Elements;
 insert into Elements (symbol, type, electrons) values ('He', 'Noble', '0');
@@ -10,8 +12,8 @@ insert into Elements (symbol, type, electrons) values ('La', 'Metal', '3');
 insert into Elements (symbol, type, electrons) values ('Cl', 'Nonmetal', '1');
 insert into Elements (symbol, type, electrons) values ('O', 'Nonmetal', '2');
 insert into Elements (symbol, type, electrons) values ('N', 'Nonmetal', '3');
-*/
 
+-- QUESTION DESCRIPTION 
 Table: Elements
 
 +-------------+---------+
