@@ -1,16 +1,16 @@
 511. Game Play Analysis I
 Easy
 
-/*
-Create table If Not Exists Activity (player_id int, device_id int, event_date date, games_played int)
-Truncate table Activity
-insert into Activity (player_id, device_id, event_date, games_played) values ('1', '2', '2016-03-01', '5')
-insert into Activity (player_id, device_id, event_date, games_played) values ('1', '2', '2016-05-02', '6')
-insert into Activity (player_id, device_id, event_date, games_played) values ('2', '3', '2017-06-25', '1')
-insert into Activity (player_id, device_id, event_date, games_played) values ('3', '1', '2016-03-02', '0')
-insert into Activity (player_id, device_id, event_date, games_played) values ('3', '4', '2018-07-03', '5')
+--Table Schema 
+Create table If Not Exists Activity (player_id int, device_id int, event_date date, games_played int);
+Truncate table Activity;
+insert into Activity (player_id, device_id, event_date, games_played) values ('1', '2', '2016-03-01', '5');
+insert into Activity (player_id, device_id, event_date, games_played) values ('1', '2', '2016-05-02', '6');
+insert into Activity (player_id, device_id, event_date, games_played) values ('2', '3', '2017-06-25', '1');
+insert into Activity (player_id, device_id, event_date, games_played) values ('3', '1', '2016-03-02', '0');
+insert into Activity (player_id, device_id, event_date, games_played) values ('3', '4', '2018-07-03', '5');
 
-*/
+-- Problem Description 
 Table: Activity
 
 +--------------+---------+
@@ -56,10 +56,21 @@ Output:
 | 3         | 2016-03-02  |
 +-----------+-------------+
 
---SOLUTION
+-- SOLUTION
+-- Using Window Function to Solve the problem
+
 SELECT 
 PLAYER_ID, 
 SUBSTRING(GROUP_CONCAT(EVENT_DATE ORDER BY EVENT_DATE),1,10) AS FIRST_LOGIN
 FROM ACTIVITY 
 WHERE EVENT_DATE IS NOT NULL
 GROUP BY PLAYER_ID 
+
+
+-- SECOND SOLUTION
+-- CODE AUTHOR Naveen Kumar Vadlamudi
+-- ADDED ON 29 November 2022 
+SELECT 
+PLAYER_ID, MIN(EVENT_DATE) AS FIRST_LOGIN
+FROM ACTIVITY 
+GROUP BY PLAYER_ID
