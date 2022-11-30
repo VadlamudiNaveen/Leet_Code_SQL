@@ -74,6 +74,7 @@ FROM
 WHERE OP.CRANK = 1
 
 -- Second Solution 
+-- Added on 29 November 2022
 -- Code Author Naveen Kumar Vadlamudi
 
 SELECT PLAYER_ID, DEVICE_ID 
