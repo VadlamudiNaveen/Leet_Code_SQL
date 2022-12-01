@@ -64,6 +64,7 @@ Note that for each player we only care about the days when the player logged in.
 
 -- SOLUTION 
 -- CODE AUTHOR Naveen Kumar Vadlamudi
+-- Solution Added on 30th November 2022
 
 SELECT 
 PLAYER_ID,
