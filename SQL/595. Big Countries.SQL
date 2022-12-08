@@ -61,7 +61,7 @@ Output:
 +-------------+------------+---------+
 
 --SOLUTION 
-# Code Author Naveen Kumar Vadlamudi
+-- Code Author Naveen Kumar Vadlamudi
 
 select 
 name, 
