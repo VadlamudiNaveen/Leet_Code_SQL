@@ -1,5 +1,6 @@
 1635. Hopper Company Queries I
-/*
+
+-- Data Model Schema
 Truncate table Drivers
 insert into Drivers (driver_id, join_date) values ('10', '2019-12-10')
 insert into Drivers (driver_id, join_date) values ('8', '2020-1-13')
@@ -36,8 +37,8 @@ insert into AcceptedRides (ride_id, driver_id, ride_distance, ride_duration) val
 insert into AcceptedRides (ride_id, driver_id, ride_distance, ride_duration) values ('15', '8', '108', '82')
 insert into AcceptedRides (ride_id, driver_id, ride_distance, ride_duration) values ('12', '8', '38', '34')
 insert into AcceptedRides (ride_id, driver_id, ride_distance, ride_duration) values ('14', '1', '90', '74')
-*/
 
+-- Problem Description 
 Table: Drivers
 
 +-------------+---------+
@@ -47,7 +48,7 @@ Table: Drivers
 | join_date   | date    |
 +-------------+---------+
 driver_id is the primary key for this table.
-Each row of this table contains the driver's ID and the date they joined the Hopper company.
+Each row of this table contains the drivers ID and the date they joined the Hopper company.
  
 
 Table: Rides
@@ -60,7 +61,7 @@ Table: Rides
 | requested_at | date    |
 +--------------+---------+
 ride_id is the primary key for this table.
-Each row of this table contains the ID of a ride, the user's ID that requested it, and the day they requested it.
+Each row of this table contains the ID of a ride, the users ID that requested it, and the day they requested it.
 There may be some ride requests in this table that were not accepted.
  
 
