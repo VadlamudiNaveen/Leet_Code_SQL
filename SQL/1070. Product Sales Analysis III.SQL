@@ -103,7 +103,7 @@ FROM FILTERED_TABLE AS FT JOIN PRODUCT AS P
 ON FT.PRODUCT_ID = P.PRODUCT_ID
 
 -- Solution 2
--- Code Author Naveen Kumar Vadlamudi
+-- Code Author Naveen Kumar Vadlamudi.
 
 SELECT 
 A.PRODUCT_ID,
