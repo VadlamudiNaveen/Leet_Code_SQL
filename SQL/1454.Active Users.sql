@@ -1,21 +1,23 @@
---1454. Active Users
-/*
-Create table If Not Exists Accounts (id int, name varchar(10))
-Create table If Not Exists Logins (id int, login_date date)
-Truncate table Accounts
-insert into Accounts (id, name) values ('1', 'Winston')
-insert into Accounts (id, name) values ('7', 'Jonathan')
-Truncate table Logins
-insert into Logins (id, login_date) values ('7', '2020-05-30')
-insert into Logins (id, login_date) values ('1', '2020-05-30')
-insert into Logins (id, login_date) values ('7', '2020-05-31')
-insert into Logins (id, login_date) values ('7', '2020-06-01')
-insert into Logins (id, login_date) values ('7', '2020-06-02')
-insert into Logins (id, login_date) values ('7', '2020-06-02')
-insert into Logins (id, login_date) values ('7', '2020-06-03')
-insert into Logins (id, login_date) values ('1', '2020-06-07')
-insert into Logins (id, login_date) values ('7', '2020-06-10')
-*/
+1454. Active Users
+
+-- Data Model
+Create table If Not Exists Accounts (id int, name varchar(10));
+Create table If Not Exists Logins (id int, login_date date);
+Truncate table Accounts;
+insert into Accounts (id, name) values ('1', 'Winston');
+insert into Accounts (id, name) values ('7', 'Jonathan');
+Truncate table Logins;
+insert into Logins (id, login_date) values ('7', '2020-05-30');
+insert into Logins (id, login_date) values ('1', '2020-05-30');
+insert into Logins (id, login_date) values ('7', '2020-05-31');
+insert into Logins (id, login_date) values ('7', '2020-06-01');
+insert into Logins (id, login_date) values ('7', '2020-06-02');
+insert into Logins (id, login_date) values ('7', '2020-06-02');
+insert into Logins (id, login_date) values ('7', '2020-06-03');
+insert into Logins (id, login_date) values ('1', '2020-06-07');
+insert into Logins (id, login_date) values ('7', '2020-06-10');
+
+-- Problem Statement 
 
 Table: Accounts
 
@@ -88,6 +90,8 @@ User Jonathan with id = 7 logged in 7 times in 6 different days, five of them we
 
 Follow up: Could you write a general solution if the active users are those who logged in to their accounts for n or more consecutive days?
 
+-- Solution 
+
 # Code Author Naveen Kumar Vadlamudi
 # Solution Using ROW_NUMBER technique + GROUP BY 
 # So after trying my own logic using LAG 
@@ -136,6 +140,7 @@ Follow up: Could you write a general solution if the active users are those who 
 
 
 -- Final Solution 
+-- Code Author Naveen Kumar Vadlamudi
 
 SELECT *
 FROM ACCOUNTS
